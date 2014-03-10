@@ -3,7 +3,9 @@ h1. IP Whitelist Middleware
 h2. About
 
 Rack Middleware for websites that need to contain access to a group of ip addresses (a whitelist). 
-Outside these addresses, vistors are shown 403 Forbidden page.
+Outside these addresses, vistors are shown 401 Unauthorized page.
+
+This particular fork is intended for use on Heroku, and where whitelisted IPs are either not behind proxies, and/or those proxies do not add `X-Forwarded-For` headers. This prevents malicious users spoofing the `X-Forwarded-For` headers by requiring an exact match.
 
 h3. Usage
 
